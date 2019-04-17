@@ -1,0 +1,23 @@
+h1 {
+	color: orange; 
+	font-size: 30px; 
+	text-decoration: underline; 
+	font-family: aria;
+	}	
+
+
+a {
+	color: white;
+	background-color: grey;
+	text-decoration: none;
+	font-family: arial;
+
+	}
+
+
+a:hover {
+
+	background: black
+
+	}
+
