@@ -1,6 +1,12 @@
 /* Estilos Generales */
-body {
 
+*{
+
+	outline: dotted red;
+}
+
+
+body {
 	font-family: helvetica, Arial, Open Sans, sans-serief;
 	font-size: 14px;
 	color: #333333;
@@ -8,7 +14,6 @@ body {
 }
 
 a {
-
 	text-decoration: none;
 	color: #FFF
 }
@@ -17,6 +22,7 @@ a {
 
 header {
 	background-color: #333;  
+
 }
 
 header h1 {
@@ -24,4 +30,20 @@ header h1 {
 	color: #FFF;
 }
 
+header nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+} 
 	
+header nav ul li {
+display: inline-block;
+
+}
+
+header nav a {
+
+text-align: center;
+padding: 5px;
+
+}
