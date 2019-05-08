@@ -1,63 +1,137 @@
 /* Estilos Generales */
 
-/*
-*{
 
-	outline: dotted red;
+* {
+	outline: dotted 1px red;
 }
- */
+
 body {
-	font-family: helvetica, Arial, Open Sans, sans-serief;
-	font-size: 12px;
-	color: #333333;
+	font-family: Helvetica, Arial, Open Sans, sans-serif;
+	font-size: 14px;
+	color: #333;
 	margin: 0;
 }
-
 a {
 	text-decoration: none;
-	color: #FFF
-}
-
-/* Estilos Particulares */
-
-header {
-	background-color: #333;  
-	overflow: hidden; /* Estirarse hasta el hijo float más alto */
-	padding: 15px;
-	
-}
-
-header h1 {
-	margin: 0;
 	color: #FFF;
-	float: left; /* Float para eliminar el margin y que pueda coexistir con otro bloque */
 }
-
+/* Estilos Particulares */
+header {
+	background-color: #333;
+	overflow: hidden;
+	padding: 15px;
+}
+header h1 {
+	color: #FFF;
+	float: left;
+	font-weight: 700;
+	font-size: 28px;
+	background-image: url("../img/logo.png");
+	background-repeat: no-repeat;
+	padding-left: 75px;
+	line-height: 1.5;
+	background-position: left center;
+}
 header nav {
-
 	float: right;
-	padding: 5px;
+	padding: 10px;
 }
-
 header nav ul {
 	margin: 0;
 	padding: 0;
 	list-style: none;
-} 
-	
+}
 header nav ul li {
-display: inline-block;
-
+	display: inline-block;
 }
-
 header nav a {
+	text-align: center;
+	padding: 5px;
+}
+header nav a:hover {
+	color: #333;
+	background-color: #FFF;
+}
+#noticias-destacadas img {
+	width: 100%;
+	display: block;
+}
 
-text-align: center;
-padding: 5px;
+
+#noticias-destacadas figcaption {
+
+	background-color: #333;
+	padding: 15px;
+	margin-bottom: 20px;
+}
+
+#noticias-destacadas h2 {
+
+	color: #FFF;
+	font-size: 40px;
+	font-weight: 700;
+}
+
+.noticia-img {
+
+	width: 30%;
+}
+
+.noticia-img img {
+
+	width: 100%
 
 }
 
-header nav a:hover {
-	color:#333;
-	background-color: #FFF;
+.noticia-text {
+
+	width: 70%;
+	margin-left: 20px;
+}
+
+.noticia-text h3 {
+
+	font-weight: 700;
+	font-size: 24px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+
+.noticia-text p {
+
+	font-size: 16px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.noticia-text a {
+
+	color: #000;
+}
+
+.noticia {
+
+	display: flex;
+	flex-direction: row; /* row I column I row-reverse I column-reverse */
+	justify-content: space-around; /*flex-start I center I flex-end I space between*/ 
+	align-items: center;
+	border-bottom: solid 1px #CCC;
+	margin-right: 20px;
+	margin-left: 20px;
+
+
+}
+
+footer {
+
+	background-color: #333;
+	padding: 15px;
+}
+
+footer p {
+
+	color: #FFF;
+	font-size: 12px;
+	text-align: center;
 }
