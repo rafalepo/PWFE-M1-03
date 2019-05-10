@@ -54,6 +54,13 @@ header nav a:hover {
 	color: #333;
 	background-color: #FFF;
 }
+
+.noticia:last-child {
+
+border-bottom: none;
+
+}
+
 #noticias-destacadas img {
 	width: 100%;
 	display: block;
@@ -73,6 +80,9 @@ header nav a:hover {
 	font-size: 40px;
 	font-weight: 700;
 }
+
+
+
 
 .noticia-img {
 
