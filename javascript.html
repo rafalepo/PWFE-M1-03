@@ -1,0 +1,60 @@
+<h1>El Kisko del "Javascript</h1>
+
+<button>Nuevo Producto +</button>
+
+<section id=productos>
+	
+
+
+</section>
+
+
+<script>
+
+	document.querySelector("button").onclick = cargarProducto
+
+	
+
+function cargarProducto()
+
+/*** Inicio fn ****/ 
+
+{
+
+
+/* Introduccion */ 
+
+let nombre = prompt ("Ingrese nombre") //< string
+let sotck = prompt  ("Ingrese stock") //< int
+let precio = prompt ("Ingrese precio") //< float
+let disponible = confirm("Está disponible?") //< bool
+
+/* Introduccion */ 
+
+let precioFinal = precio * 1.21
+
+
+if (nombre=="") {
+
+	alert("ERROR: el nombre no puede quedar vacio... ")
+
+return
+
+}
+
+
+
+/* Desenlace */ 
+
+let msg = `<p> El producto  <strong>${nombre}</strong> vale AR$ ${precioFinal} la unidad `
+
+document.getElementById("productos").insertAdjacentHTML("afterend", msg) 
+
+//document.write( `El producto  <strong>${nombre}</strong> vale AR$ ${precioFinal} la unidad`)//
+
+/*** Inicio fn ****/ 
+}
+
+</script>
+
+
