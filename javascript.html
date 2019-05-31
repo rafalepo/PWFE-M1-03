@@ -1,12 +1,28 @@
-<h1>El Kisko del "Javascript</h1>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf8">
+		<title>Kiosko "El JeviScript"</title>
+		<link rel="stylesheet" href="https://docs.google.com/uc?id=17C6A6tYbFc9esDbgo0Q-HjN2rNjvXbyc">
+	</head>
+	<body>
+		<h1>Kiosko <strong>El JeviScript</strong></h1>
 
-<button>Nuevo Producto +</button>
+		<button>Nuevo Producto +</button>
 
-<section id=productos>
-	
-
-
-</section>
+		<table>
+			<thead>
+				<tr>
+					<th>Nombre</th>
+					<th>Stock</th>
+					<th>Precio</th>
+					<th>Disponible</th>
+				</tr>
+			</thead>
+			<tbody id="productos">
+				<!-- ACÁ TIENEN QUE APARECER LOS PRODUCTOS -->
+			</tbody>
+		</table>
 
 
 <script>
@@ -25,7 +41,7 @@ function cargarProducto()
 /* Introduccion */ 
 
 let nombre = prompt ("Ingrese nombre") //< string
-let sotck = prompt  ("Ingrese stock") //< int
+let stock = prompt  ("Ingrese stock") //< int
 let precio = prompt ("Ingrese precio") //< float
 let disponible = confirm("Está disponible?") //< bool
 
@@ -34,27 +50,80 @@ let disponible = confirm("Está disponible?") //< bool
 let precioFinal = precio * 1.21
 
 
-if (nombre=="") {
+while (nombre=="" || nombre==null || nombre==undefined)  {
 
 	alert("ERROR: el nombre no puede quedar vacio... ")
+	nombre = prompt ("Ingrese nombre")
+
+
+
+}
+
+
+if (stock=="" || stock < 0 || parseFloat (precio) == NaN ) {
+
+	alert("ERROR: el precio debe ser un número positivo con decimales")
 
 return
 
 }
 
 
+if (precio==""  || precio < 0)   {
+
+	alert("ERROR: el precio no puede quedar vacio... ")
+
+
+
+}
+
+
+if (disponible=="undefined" ) {
+
+	alert("ERROR: Debe especificar la disponibilidad ")
+
+return
+
+}
+
 
 /* Desenlace */ 
 
-let msg = `<p> El producto  <strong>${nombre}</strong> vale AR$ ${precioFinal} la unidad `
+/* let msg = `<p> El producto  <strong>${nombre}</strong> vale AR$ ${precioFinal} la unidad `
 
 document.getElementById("productos").insertAdjacentHTML("afterend", msg) 
 
-//document.write( `El producto  <strong>${nombre}</strong> vale AR$ ${precioFinal} la unidad`)//
+//document.write( `El producto  <strong>${nombre}</strong> vale AR$ ${precioFinal} la unidad`)// */
 
-/*** Inicio fn ****/ 
+let fila = document.createElement ("tr") 
+let celda1= document.createElement ("td") 
+let celda2= document.createElement ("td")
+let celda3= document.createElement ("td")
+let celda4= document.createElement ("td")
+
+
+celda1.innerText = nombre
+celda2.innerText = stock  + " unid."
+celda3.innerText = `$${precioFinal.toFixed (2)}`
+celda4.innerText = disponible
+
+celda4.innerText = disponible ? "SI" : "NO"
+
+
+
+fila.appendChild (celda1)
+fila.appendChild (celda2)
+fila.appendChild (celda3)
+fila.appendChild (celda4)
+
+
+document.querySelector (`#productos`).appendChild(fila)
+
+/*** Fin CargarProducto ****/ 
 }
 
 </script>
 
 
+	</body>
+</html>
