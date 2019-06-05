@@ -47,27 +47,27 @@
 
 
             <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fas fa-futbol"></i> Futbol</a>
+              <a class="nav-link" href="https://es.wikipedia.org/wiki/futbol"><i class="fas fa-futbol"></i> Futbol</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fas fa-basketball-ball"></i> NBA</a>
+              <a class="nav-link" href="https://es.wikipedia.org/wiki/nba"><i class="fas fa-basketball-ball"></i> NBA</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fas fa-racquet"></i> Tenis</a>
+              <a class="nav-link" href="https://es.wikipedia.org/wiki/tenis"><i class="fas fa-racquet"></i> Tenis</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fas fa-flag-checkered"></i> Fórmula 1</a>
+              <a class="nav-link" href="https://es.wikipedia.org/wiki/formula"><i class="fas fa-flag-checkered"></i> Fórmula 1</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="#"> <i class="fas fa-fist-raised"></i></i> Bóxeo</a>
+              <a class="nav-link" href="https://es.wikipedia.org/wiki/boxeo"> <i class="fas fa-fist-raised"></i></i> Bóxeo</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="#"> <i class="fas fa-medal"></i> JJOO</a>
+              <a class="nav-link" href="https://es.wikipedia.org/wiki/juegos"> <i class="fas fa-medal"></i> JJOO</a>
             </li>
 
             <li class="nav-item">
@@ -244,8 +244,10 @@
 		}
 
 		function validarOpcion(sarasa) {
+			sarasa.preventDefault()	
+			let clickeado = sarasa.target
 
-			let clickeado = sarasa.target;
+			console.log(sarasa)
 
 
 			let rta = confirm(`Esta seguro que desea ir a ${clickeado.innerText}?`)
@@ -253,14 +255,37 @@
 			if(rta) {
 
 				alert("Ok, buen viaje!")
+				window.location = clickeado.href
 
 			}
 
 
+		}
 
 
+		function obtenerNoticias(){
+
+
+			let ajax = new XMLHttpRequest()
+			
+			ajax.open("GET", "noticias.json")
+			
+			ajax.onload = function(){
+			
+			if ( ajax.status == 200) {
+
+
+			console.log ( ajax.response )			
+			
+			}
+
+			}
+			
+			ajax.send()
 
 		}
+
+
 
 
     </script>
